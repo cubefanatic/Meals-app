@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+
 import Card from "../UI/Card";
 import MealItem from "./MealItem/MealItem";
 import classes from "./AvailableMeals.module.css";
@@ -21,6 +22,7 @@ const AvailableMeals = () => {
       const responseData = await response.json();
 
       const loadedMeals = [];
+
       for (const key in responseData) {
         loadedMeals.push({
           id: key,
@@ -29,6 +31,7 @@ const AvailableMeals = () => {
           price: responseData[key].price
         });
       }
+
       setMeals(loadedMeals);
       setIsLoading(false);
     };
@@ -57,8 +60,8 @@ const AvailableMeals = () => {
 
   const mealsList = meals.map((meal) => (
     <MealItem
-      id={meal.id}
       key={meal.id}
+      id={meal.id}
       name={meal.name}
       description={meal.description}
       price={meal.price}
