@@ -1,2 +1,2 @@
 # Meals-app
-Created with CodeSandbox
+A meal ordering application that was made using react.js for frontend and firebase as backend.
